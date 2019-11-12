@@ -1,4 +1,5 @@
-# BootCamp GoStack 8.0 :rocket:
+<p  align="center"><img src="https://avatars0.githubusercontent.com/u/28929274?s=200&v=4"></p>
+<h1 align="center">BootCamp GoStack 8.0</h1>
 
 O repositório tem como finalidade de expor os códigos desenvolvidos ao longo do curso do BootCamp, promovido pela [RocketSeat](https://rocketseat.com.br/) e além é claro manter o versionamento de código organizado.
 
