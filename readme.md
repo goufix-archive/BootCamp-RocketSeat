@@ -20,7 +20,8 @@ Neste projeto você irá encontrar uma stack completa baseada em JavaScrip. Ent�
 #### Módulos
 
 - [Módulo 01](https://github.com/TiagoBehenck/BootCamp-RocketSeat/tree/master/Modulo01)
-- [Módulo 02 & 03](https://github.com/TiagoBehenck/BootCamp-RocketSeat/tree/master/Modulo02%2603)
+- [Módulo 02](https://github.com/TiagoBehenck/BootCamp-RocketSeat/tree/master/Modulo02)
+- [Módulo 03](https://github.com/TiagoBehenck/BootCamp-RocketSeat/tree/master/Modulo03)
 - [Módulo 04](https://github.com/TiagoBehenck/BootCamp-RocketSeat/tree/master/Modulo04)
 
 #### Desafios
