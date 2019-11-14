@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('users', {
@@ -29,7 +30,7 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
       },
-      update_at: {
+      updated_at: {
         type: Sequelize.DATE,
         allowNull: false,
       },
