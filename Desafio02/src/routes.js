@@ -1,10 +1,10 @@
 import { Router } from 'express';
 
-import UserController from './app/controllers/StudentController';
+import StudentController from './app/controllers/StudentController';
 
 const routes = new Router();
 
-routes.post('/users', UserController.store);
-routes.put('/users', UserController.update);
+routes.post('/students', StudentController.store);
+routes.put('/students', StudentController.update);
 
 export default routes;
