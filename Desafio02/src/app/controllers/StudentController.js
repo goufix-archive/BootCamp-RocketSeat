@@ -42,7 +42,11 @@ class StudentController {
   async update(req, res) {
     const { email } = req.body;
 
-    const student = await Student.findByPk(req.params.id);
+    console.log(req.params);
+
+    const student = await Student.findByPk(req.userId);
+
+    // console.log(student);
 
     if (email !== student.email) {
       const studentExists = await Student.findOne({ where: { email } });

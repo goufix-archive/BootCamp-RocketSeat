@@ -1,4 +1,5 @@
 export default {
-  secret: 'ebbc940efcc9b9f09ea5682b762044e5',
+  // gympointdesafio02
+  secret: '63015725ed9ec5578566a452d75c9630',
   expiresIn: '7d',
 };
