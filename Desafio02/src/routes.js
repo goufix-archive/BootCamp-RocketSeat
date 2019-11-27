@@ -4,17 +4,17 @@ import StudentController from './app/controllers/StudentController';
 import SessionController from './app/controllers/SessionController';
 import UserController from './app/controllers/UserController';
 
-// import authMiddleware from './app/middlewares/auth';
+import authMiddleware from './app/middlewares/auth';
 
 const routes = new Router();
 
-routes.post('/user', UserController.store); // Funcionando
-routes.post('/sessions', SessionController.store); // Funcionando
+routes.post('/user', UserController.store);
+routes.post('/sessions', SessionController.store);
 
-// routes.use(authMiddleware);
+routes.use(authMiddleware);
 
-routes.post('/students', StudentController.store); // Funcionando
-routes.put('/students/:id', StudentController.update); // Funcionando
-routes.put('/user', UserController.update); // testar
+routes.post('/students', StudentController.store);
+routes.put('/students/:id', StudentController.update);
+routes.put('/user', UserController.update);
 
 export default routes;
