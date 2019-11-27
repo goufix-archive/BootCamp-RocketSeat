@@ -31,8 +31,8 @@ class SessionController {
     }
     const { id, name } = user;
 
-    const token = await jwt.sign({ id }, authConfig.secrete, {
-      expiresIn: authConfig.expireIn,
+    const token = await jwt.sign({ id }, authConfig.secret, {
+      expiresIn: authConfig.expiresIn,
     });
 
     return res.json({
