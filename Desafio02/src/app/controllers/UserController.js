@@ -53,6 +53,8 @@ class UserController {
     }
     const { email, oldPassword } = req.body;
 
+    console.log(req.userId);
+
     const user = await User.findByPk(req.userId);
 
     if (email !== user.email) {
