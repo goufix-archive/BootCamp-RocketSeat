@@ -1,9 +1,9 @@
 import * as Yup from 'yup';
 
 import User from '../models/User';
-import Appointmnent from '../models/Appointment';
+import Appointment from '../models/Appointment';
 
-class AppointmnentController {
+class AppointmentController {
   async store(req, res) {
     const schema = Yup.object().shape({
       provider_id: Yup.number().required(),
@@ -27,16 +27,16 @@ class AppointmnentController {
         .json({ error: 'You can olny create appointments with providers' });
     }
 
-    const appointment = await Appointmnent.create({
+    const appointment = await Appointment.create({
       user_id: req.userId,
       provider_id,
       date,
     });
 
-    console.log('AQUI', appointment);
+    // console.log('AQUI', appointment);
 
     return res.json(appointment);
   }
 }
 
-export default new AppointmnentController();
+export default new AppointmentController();
