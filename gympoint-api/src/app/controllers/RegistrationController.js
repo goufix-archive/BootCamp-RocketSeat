@@ -1,3 +1,12 @@
+import * as Yup from 'yup';
+import { addMonths, parseISO } from 'date-fns';
+
+import Plan from '../models/Plan';
+import Student from '../models/Student';
+import Registration from '../models/Registration';
+
+import Mail from '../../lib/Mail';
+
 class RegistrationController {
   async index(req, res) {
     return res.json({});
