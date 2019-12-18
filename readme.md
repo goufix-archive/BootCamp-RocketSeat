@@ -8,13 +8,21 @@ Neste projeto você irá encontrar uma stack completa baseada em JavaScrip. Ent�
 #### Node.js
 
 #### Docker
+##### GoBarber
+`docker run --name database -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres:11`
 
+##### GymPoint
 `docker run --name gympoint -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres:11`
 
 #### MongoDB
+##### GoBarber
+`docker run --name mongobarber -p 27017:27017 -d -t mongo `
 
 #### Redis
+##### GoBarber
+`docker run --name redisbarber -p 6379:6379 -d -t redis:alpine`
 
+##### GymPoint
 `docker run --name redisgympoint -p 6379:6379 -d -t redis:alpine`
 
 #### ReactJS
