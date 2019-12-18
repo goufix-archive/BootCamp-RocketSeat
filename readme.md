@@ -9,9 +9,13 @@ Neste projeto você irá encontrar uma stack completa baseada em JavaScrip. Ent�
 
 #### Docker
 
+`docker run --name gympoint -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres:11`
+
 #### MongoDB
 
 #### Redis
+
+`docker run --name redisgympoint -p 6379:6379 -d -t redis:alpine`
 
 #### ReactJS
 
