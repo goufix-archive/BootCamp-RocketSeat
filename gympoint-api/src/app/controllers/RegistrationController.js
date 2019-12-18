@@ -97,8 +97,8 @@ class RegistrationController {
   }
 
   async update(req, res) {
-    const { start_date, student_id } = req.body;
     const { registration_id } = req.params;
+    const { start_date, student_id } = req.body;
 
     const schema = Yup.object().shape({
       plan_id: Yup.number().required(),

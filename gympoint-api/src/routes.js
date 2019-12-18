@@ -7,8 +7,15 @@ import PlansController from './app/controllers/PlanController';
 import RegistrationController from './app/controllers/RegistrationController';
 
 import authMiddleware from './app/middlewares/auth';
+import CheckinController from './app/controllers/CheckinController';
 
 const routes = new Router();
+
+// TODO Organizar ordens das rotas e importações também a ordem das funções dentro dos Controllers
+
+// CHECKIN
+routes.post('/students/:student_id/checkins', CheckinController.store);
+routes.get('/students/:student_id/checkins', CheckinController.index);
 
 routes.post('/user', UserController.store);
 routes.post('/sessions', SessionController.store);
