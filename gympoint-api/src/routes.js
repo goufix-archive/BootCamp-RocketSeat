@@ -18,7 +18,7 @@ routes.use(authMiddleware);
 // STUDENTS
 routes.get('/students', StudentController.index);
 routes.post('/students', StudentController.store);
-routes.put('/students/:id', StudentController.update);
+routes.put('/students/:student_id', StudentController.update);
 routes.put('/user', UserController.update);
 
 // PLANS
@@ -29,6 +29,9 @@ routes.put('/plans/:plan_id', PlansController.update);
 routes.delete('/plans/:plan_id', PlansController.delete);
 
 // REGISTRATION
-routes.get('/registration', RegistrationController.store);
+routes.post('/registration', RegistrationController.store);
+routes.get('/registration/', RegistrationController.index);
+routes.put('/registration/:registration_id', RegistrationController.update);
+routes.delete('/registration/:registration_id', RegistrationController.delete);
 
 export default routes;

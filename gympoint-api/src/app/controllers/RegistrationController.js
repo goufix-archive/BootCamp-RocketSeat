@@ -10,7 +10,27 @@ import Queue from '../../lib/Queue';
 
 class RegistrationController {
   async index(req, res) {
-    return res.json({});
+    const { page = 1 } = req.query;
+
+    const registration = await Registration.findAll({
+      offset: (page - 1) * 10,
+      limit: 10,
+      include: [
+        {
+          model: Student,
+          as: 'student',
+          attributes: ['id', 'name', 'email', 'age', 'height', 'weight'],
+        },
+        {
+          model: Plan,
+          as: 'plan',
+          attributes: ['title', 'price', 'duration'],
+        },
+      ],
+      attributes: ['id', 'start_date', 'end_date', 'price'],
+    });
+
+    return res.json(registration);
   }
 
   async store(req, res) {
@@ -18,7 +38,7 @@ class RegistrationController {
 
     const schema = Yup.object().shape({
       plan_id: Yup.number().required(),
-      // start_date: Yup.date().required(),
+      start_date: Yup.date().required(),
       student_id: Yup.number().required(),
     });
 
@@ -74,6 +94,45 @@ class RegistrationController {
     });
 
     return res.json(registration);
+  }
+
+  async update(req, res) {
+    const { start_date, student_id } = req.body;
+    const { registration_id } = req.params;
+
+    const schema = Yup.object().shape({
+      plan_id: Yup.number().required(),
+      start_date: Yup.date().required(),
+      student_id: Yup.number().required(),
+    });
+
+    if (!(await schema.isValid(req.body))) {
+      return res.status(400).json({ error: 'Validation failed' });
+    }
+
+    const registration = await Registration.findByPk(registration_id);
+
+    if (!registration) {
+      return res.status(404).json({ error: 'Registration not founded' });
+    }
+
+    const newRegistration = await registration.update({
+      start_date,
+      registration_id,
+      student_id,
+    });
+
+    return res.json(newRegistration);
+  }
+
+  async delete(req, res) {
+    const { registration_id } = req.params;
+
+    const regristraion = await Registration.findByPk(registration_id);
+
+    await regristraion.destroy();
+
+    return res.json({ success: 'Registration deleted with success' });
   }
 }
 

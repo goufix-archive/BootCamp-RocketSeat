@@ -66,9 +66,9 @@ class StudentController {
 
     const { email } = req.body;
 
-    const { id } = req.params;
+    const { student_id } = req.params;
 
-    const student = await Student.findByPk(id);
+    const student = await Student.findByPk(student_id);
 
     if (!student) {
       return res.status(404).json({ error: 'Student not found!' });
@@ -86,7 +86,7 @@ class StudentController {
 
     const { name, age, weight, height } = await student.update(req.body);
 
-    return res.json({ id, name, email, age, weight, height });
+    return res.json({ student_id, name, email, age, weight, height });
   }
 }
 
