@@ -18,7 +18,7 @@ class RegistrationController {
 
     const schema = Yup.object().shape({
       plan_id: Yup.number().required(),
-      start_date: Yup.date().required(),
+      // start_date: Yup.date().required(),
       student_id: Yup.number().required(),
     });
 
@@ -56,7 +56,7 @@ class RegistrationController {
     }
 
     const registration = await Registration.create({
-      start_date,
+      start_date: formated_date,
       end_date,
       price,
       plan_id,
@@ -64,7 +64,10 @@ class RegistrationController {
     });
 
     await Queue.add(RegistrationMail.key, {
-      start_date: format(start_date, "'At day' dd 'of' MMMM',' H:mm 'hours'"),
+      start_date: format(
+        formated_date,
+        "'At day' dd 'of' MMMM',' H:mm 'hours'"
+      ),
       end_date: format(end_date, "'At day' dd 'of' MMMM',' H:mm 'hours'"),
       title,
       planPrice,
