@@ -12,6 +12,8 @@ class Registration extends Model {
         sequelize,
       }
     );
+
+    return this;
   }
 
   static associate(models) {
