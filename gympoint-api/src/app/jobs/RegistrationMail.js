@@ -17,7 +17,7 @@ class RegistrationMail {
       duration,
     } = data;
 
-    return Mail.sendEmail({
+    return Mail.sendMail({
       to: `<${student.email}>`,
       subject: 'Registration',
       template: 'registration_confirm',

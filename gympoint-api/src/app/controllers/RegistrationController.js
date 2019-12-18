@@ -64,11 +64,8 @@ class RegistrationController {
     });
 
     await Queue.add(RegistrationMail.key, {
-      start_date: format(
-        formated_date,
-        "'At day' dd 'of' MMMM',' H:mm 'hours'"
-      ),
-      end_date: format(end_date, "'At day' dd 'of' MMMM',' H:mm 'hours'"),
+      start_date: format(formated_date, "dd'/'MM'/'yyyy"),
+      end_date: format(end_date, "dd'/'MM'/'yyyy"),
       title,
       planPrice,
       price,
