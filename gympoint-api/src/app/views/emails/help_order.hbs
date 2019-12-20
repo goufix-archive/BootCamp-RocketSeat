@@ -4,9 +4,8 @@
   }
 
   .plan-name {
-    text-align: center;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
   }
 
@@ -26,49 +25,8 @@
   }
 
   .text-destaque span {
-    color: #7159c1;
+    color: #d6355e;
     text-transform: uppercase;
-  }
-
-  .text-auxiliar {
-    font-weight: 400;
-    max-width: 350px;
-    margin: 18px auto;
-  }
-
-  .datas {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 320px;
-    margin: 0 auto;
-  }
-
-  .datas .data {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    flex-grow: 2;
-  }
-
-  .datas .data:first-child {
-    border-right: 1px solid #ccc;
-  }
-
-  .datas .data span:first-child {
-    font-weight: 500;
-    font-size: 15px;
-  }
-
-  .frase {
-    margin-top: 30px;
-    display: block;
-  }
-
-  .frase,
-  .frase-autor {
-    font-weight: 500;
-    font-size: 15px;
   }
 </style>
 <div class="registration">
@@ -76,23 +34,18 @@
     <img src="https://raw.githubusercontent.com/Rocketseat/bootcamp-gostack-desafio-03/master/.github/logo.png" />
     <p class="text-destaque"> Hello, <span> {{student}}</span> </p>
 
-    <p class="text-destaque">Your registration was successful!</p>
+    <p class="text-destaque">Your question was answered!</p>
 
     <div class="plan-name">
-      <span style="text-transform: uppercase;">{{title}}</span>
+      <span style="color: #d6355e;">Question:</span>
+      <span style="text-transform: capitalize; font-weight:bold;">{{title}}</span>
+      <span style="color: #d6355e;">Answer:</span>
+      <span style="text-transform: capitalize; font-weight:bold;"> {{answer}} </span>
+      <hr>
+      <span style="color: #d6355e;font-weight:bold;">Answer at:</span>
+      <span style="text-transform: capitalize; font-weight:bold;"> {{answer_at}} </span>
+      <hr>
     </div>
-    <span style="margin: 8px; display: block;"> $ {{price}}‬,00</span>
-    <p class="text-auxiliar">Thank you for enrolling in GymPoint. You now have acess to all gym in our network!
-    </p>
-    <p class="text-auxiliar">{{duration}} month plan for ${{planPrice}}/month;</p>
-    <div class="datas">
-      <div class="data">
-        <span>Initial date</span>
-        <span>{{start_date}}</span>
-      </div>
-      <div class="data">
-        <span>Final date</span>
-        <span>{{end_date}}</span>
-      </div>
-    </div>
+
+
   </div>
