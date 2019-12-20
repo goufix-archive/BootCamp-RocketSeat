@@ -24,7 +24,7 @@ class AnswerOrderController {
     return res.json(pendingQuestion);
   }
 
-  async storte(req, res) {
+  async store(req, res) {
     const { question_id } = req.params;
 
     if (!question_id) {

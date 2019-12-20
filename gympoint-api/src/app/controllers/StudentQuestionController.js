@@ -44,9 +44,11 @@ class StudentQuestionController {
       include: {
         model: Student,
         as: 'student',
-        attributes: ['id', 'name', 'email', 'age', 'weight', 'height'],
+        attributes: ['id', 'name', 'email', 'weight', 'height'],
       },
     });
+
+    console.log('AQUI >>', helpOrders);
 
     return res.json(helpOrders);
   }

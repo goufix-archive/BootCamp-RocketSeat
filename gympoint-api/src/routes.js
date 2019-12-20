@@ -19,7 +19,10 @@ const routes = new Router();
 routes.post('/students/:student_id/checkins', CheckinController.store);
 routes.get('/students/:student_id/checkins', CheckinController.index);
 
+// USER
 routes.post('/user', UserController.store);
+
+// SESSION
 routes.post('/sessions', SessionController.store);
 
 // HELP ORDERS
@@ -54,7 +57,7 @@ routes.put('/registration/:registration_id', RegistrationController.update);
 routes.delete('/registration/:registration_id', RegistrationController.delete);
 
 // HELP ORDERS
-routes.post('/help-orders/:question_id/answer', AnswerOrderController.storte);
+routes.post('/help-orders/:question_id/answer', AnswerOrderController.store);
 routes.get('/help-orders/pending', AnswerOrderController.index);
 
 export default routes;

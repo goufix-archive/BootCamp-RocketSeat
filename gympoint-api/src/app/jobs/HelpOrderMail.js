@@ -7,7 +7,7 @@ class HelpOrderMail {
 
   async handle({ data }) {
     const { email, name, question, answer_at, answer } = data;
-    return Mail.sendEmail({
+    return Mail.sendMail({
       to: `<${email}>`,
       subject: 'Your help order was answered',
       template: 'help_order',

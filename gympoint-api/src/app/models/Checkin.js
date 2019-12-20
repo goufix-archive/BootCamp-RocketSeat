@@ -10,7 +10,6 @@ class Checkin extends Model {
         sequelize,
       }
     );
-
     this.addHook('beforeSave', async user => {
       const numberOfCheckins = await this.findAll({
         where: { student_id: user.student_id },
