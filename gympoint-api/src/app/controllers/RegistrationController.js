@@ -42,6 +42,8 @@ class RegistrationController {
       student_id: Yup.number().required(),
     });
 
+    console.log(student_id);
+
     if (!(await schema.isValid(req.body))) {
       return res.status(400).json({ error: 'Validation failed' });
     }

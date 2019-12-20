@@ -40,7 +40,7 @@ class AnswerOrderController {
     const { answer } = req.body;
 
     await existingQuestion.update({ answer, answer_at: Date.now() });
-    await existingQuestion.save();
+    // await existingQuestion.save();
 
     const { email, name } = await Student.findByPk(existingQuestion.student_id);
 
