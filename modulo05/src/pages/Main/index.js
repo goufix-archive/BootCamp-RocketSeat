@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { FaGithubAlt, FaPlus, FaSpinner } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 import api from '../../services/api';
 
-import { Container, Form, SubmitButton, List } from './styles';
+import Container from '../../components/Container';
+import { Form, SubmitButton, List } from './styles';
 
 export default class Main extends Component {
-  // eslint-disable-next-line react/state-in-constructor
   state = {
     newRepo: '',
     repositories: [],
@@ -17,12 +18,13 @@ export default class Main extends Component {
     const repositories = localStorage.getItem('repositories');
 
     if (repositories) {
-      this.setState({ repositories: JSON.stringify(repositories) });
+      this.setState({ repositories: JSON.parse(repositories) });
     }
   }
 
   componentDidUpdate(_, prevState) {
     const { repositories } = this.state;
+
     if (prevState.repositories !== repositories) {
       localStorage.setItem('repositories', JSON.stringify(repositories));
     }
@@ -42,7 +44,7 @@ export default class Main extends Component {
     const response = await api.get(`/repos/${newRepo}`);
 
     const data = {
-      name: response.data.name,
+      name: response.data.full_name,
     };
 
     this.setState({
@@ -62,7 +64,7 @@ export default class Main extends Component {
           Repositórios
         </h1>
 
-        <Form onSubit={this.handleSubmit}>
+        <Form onSubmit={this.handleSubmit}>
           <input
             type="text"
             placeholder="Adicionar reposiótiro"
@@ -82,7 +84,7 @@ export default class Main extends Component {
           {repositories.map(repository => (
             <li key={repository.name}>
               <span>{repository.name}</span>
-              <a href="#">Detalhes</a>
+              <Link to="/repository">Detalhes</Link>
             </li>
           ))}
         </List>
