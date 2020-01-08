@@ -21,13 +21,11 @@ import {
 
 // eslint-disable-next-line react/prefer-stateless-function
 export default class Main extends Component {
- 
-
   static propTypes = {
     navigation: PropTypes.shape({
       navigate: PropTypes.func,
     }).isRequired,
-  }
+  };
 
   state = {
     newUser: '',
@@ -35,8 +33,6 @@ export default class Main extends Component {
     loading: false,
   };
 
-
-  
   async componentDidMount() {
     const users = await AsyncStorage.getItem('users');
 
@@ -76,7 +72,7 @@ export default class Main extends Component {
     Keyboard.dismiss();
   };
 
-  handleNavigate = (user) => {
+  handleNavigate = user => {
     const { navigation } = this.props;
 
     navigation.navigate('User', { user });
