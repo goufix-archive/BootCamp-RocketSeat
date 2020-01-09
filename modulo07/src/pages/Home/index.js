@@ -7,7 +7,10 @@ export default function Home() {
   return (
     <ProductList>
       <li>
-        <img src="" alt="Tênis" />
+        <img
+          src="https://static.netshoes.com.br/produtos/tenis-adidas-solar-ride-masculino/26/COL-6973-026/COL-6973-026_zoom1.jpg"
+          alt="Tênis"
+        />
         <strong>Tênis</strong>
         <span>R$129,90</span>
         <button type="button">
