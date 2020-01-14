@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import colors from '../../style/colors';
+import colors from '../../styles/colors';
 
 import logo from '../../assets/images/logo.svg';
 

@@ -1,13 +1,16 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
 
-import Header from './components/Header';
+import Routes from './routes';
+import NavigationService from './services/navigation';
 
 export default function App() {
   return (
     <>
       <StatusBar barStyle="light-content" />
-      <Header />
+      <Routes
+        ref={navigatorRef => NavigationService.setNavigator(navigatorRef)}
+      />
     </>
   );
 }
