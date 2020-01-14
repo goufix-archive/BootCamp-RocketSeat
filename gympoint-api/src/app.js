@@ -7,7 +7,6 @@ import './database';
 
 class App {
   constructor() {
-    // Instanciando o servidor
     this.server = express();
 
     this.middlewares();
