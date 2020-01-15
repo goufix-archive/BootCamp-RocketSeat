@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-newline */
 import React from 'react';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';

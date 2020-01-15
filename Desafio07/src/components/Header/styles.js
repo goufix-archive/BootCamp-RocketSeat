@@ -1,11 +1,10 @@
 import styled from 'styled-components/native';
-
 import colors from '../../styles/colors';
 
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/logo.png';
 
 export const Wrapper = styled.SafeAreaView`
-  flex: 0;
+  /* flex: 1; */
   background: ${colors.dark};
   flex-direction: row;
 `;
