@@ -3,6 +3,7 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import Header from './components/Header';
 import Main from './pages/Main';
+import Cart from './pages/Cart';
 
 const styles = StyleSheet.create({
   container: {
@@ -15,7 +16,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Header />
-      <Main />
+      {/* <Main /> */}
+      <Cart />
     </View>
   );
 }

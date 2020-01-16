@@ -1,8 +1,40 @@
 import React from 'react';
-import { View } from 'react-native';
 
-import { Container } from './styles';
+import {
+  Wrapper,
+  Container,
+  Product,
+  ProductImage,
+  ProductInfo,
+  ProductTitle,
+  ProductPrice,
+  ProductAbout,
+  ProductAmount,
+  ProductTotal,
+  Total,
+  PriceTotal,
+  ButtonFinished,
+} from './styles';
 
 export default function Cart() {
-  return <View />;
+  return (
+    <Wrapper>
+      <Container>
+        <Product>
+          <ProductImage />
+          <ProductInfo>
+            <ProductTitle>Tênis de caminhada</ProductTitle>
+            <ProductPrice>R$189,90</ProductPrice>
+          </ProductInfo>
+        </Product>
+        <ProductAbout>
+          <ProductAmount>3</ProductAmount>
+          <ProductTotal>R$578,90</ProductTotal>
+        </ProductAbout>
+        <Total />
+        <PriceTotal />
+        <ButtonFinished />
+      </Container>
+    </Wrapper>
+  );
 }
