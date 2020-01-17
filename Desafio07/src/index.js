@@ -1,3 +1,6 @@
+import 'intl';
+import 'intl/locale-data/jsonp/pt-BR';
+
 import React from 'react';
 
 import { View, StyleSheet } from 'react-native';
@@ -16,8 +19,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Header />
-      {/* <Main /> */}
-      <Cart />
+      <Main />
+      {/* <Cart /> */}
     </View>
   );
 }

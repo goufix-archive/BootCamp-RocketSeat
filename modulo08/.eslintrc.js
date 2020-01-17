@@ -21,12 +21,13 @@ module.exports = {
     'prettier/prettier': 'error',
     'react/jsx-filename-extension': ['warn', { extensions: ['.jsx', '.js'] }],
     'import/prefer-default-export': 'off',
-    'react/state-in-constructor': 'off',
+    'no-param-reassign': 'off',
     'no-console': ['error', { allow: ['tron'] }],
+
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-dps': 'warn',
+    'react-hooks/exhaustive-deps': 'warn',
+    // 'react/state-in-constructor': 'off',
     // 'react/static-property-placement': ['off', 'property assignment'],
     // 'react/static-property-placement': ['error', 'static public field'],
-    // 'no-param-reassign': 'off',
   },
 };
