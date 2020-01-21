@@ -42,7 +42,7 @@ export default function Notifications() {
   }, []);
 
   function handleToggleVisable() {
-    setVisable(!visable);
+    setVisible(!visible);
   }
 
   async function handleMarkAsRead(id) {
