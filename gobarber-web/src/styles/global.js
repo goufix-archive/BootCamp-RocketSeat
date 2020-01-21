@@ -22,6 +22,7 @@ export default createGlobalStyle`
   }
 
   body {
+    text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -35,5 +36,9 @@ export default createGlobalStyle`
 
   ul {
     list-style: none;
+  }
+
+  .toast {
+    margin-top: 70px;
   }
 `;
