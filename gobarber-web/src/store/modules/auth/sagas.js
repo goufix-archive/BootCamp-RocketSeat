@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import history from '~/services/history';
 import api from '~/services/api';
 
-import { signInRequest, signFailure } from './actions';
+import { signInSuccess, signFailure } from './actions';
 
 export function* signIn({ payload }) {
   try {
@@ -22,11 +22,12 @@ export function* signIn({ payload }) {
       return;
     }
 
-    yield put(signInRequest(token, user));
+    yield put(signInSuccess(token, user));
 
     history.push('/dashboard');
   } catch (err) {
     toast.error('Falha na autenticação, verifique seus dados.');
+    console.tron.error(err);
     yield put(signFailure());
   }
 }
