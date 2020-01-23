@@ -14,7 +14,7 @@ class ScheduleController {
       return res.status(401).json({ error: 'User is not a provider' });
     }
 
-    const { date } = req.query;
+    const { page = 1, date = new Date().toISOString() } = req.query;
     const parseDate = parseISO(date);
 
     const appointment = await Appointment.findAll({
@@ -33,6 +33,9 @@ class ScheduleController {
         },
       ],
       order: ['date'],
+      attributes: ['date'],
+      limit: 20,
+      offset: (page - 1) * 20,
     });
 
     return res.json(appointment);

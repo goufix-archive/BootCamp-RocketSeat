@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
+import 'react-perfect-scrollbar/dist/css/styles.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default createGlobalStyle`
@@ -21,6 +22,7 @@ export default createGlobalStyle`
   }
 
   body {
+    text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -34,5 +36,10 @@ export default createGlobalStyle`
 
   ul {
     list-style: none;
+  }
+
+  .toast {
+    margin-top: 70px;
+    border-radius: 4px;
   }
 `;
