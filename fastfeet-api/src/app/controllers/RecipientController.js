@@ -71,16 +71,11 @@ class RecipientsController {
 
     await recipient.update(req.body);
 
-    return res.json({
-      id,
-      name,
-      street,
-      number,
-      complement,
-      state,
-      city,
-      postal_code,
-    });
+    return res.json(recipient);
+  }
+
+  async delete(req, res) {
+    return res.json({ ok: true });
   }
 }
 
