@@ -1,5 +1,5 @@
 import * as Yup from 'yup';
-import Couriers from '../models/Couriers';
+import Couriers from '../models/Courier';
 
 class CouriersController {
   async index(req, res) {
