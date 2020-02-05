@@ -1,13 +1,13 @@
 import Sequelize from 'sequelize';
 
-import User from '../app/models/User';
-import Recipient from '../app/models/Recipient';
-import Courier from '../app/models/Courier';
+import Deliveryman from '../app/models/Deliveryman';
 import File from '../app/models/File';
+import Recipient from '../app/models/Recipient';
+import User from '../app/models/User';
 
 import databaseConfig from '../config/database';
 
-const models = [User, Recipient, Courier, File];
+const models = [User, Recipient, Deliveryman, File];
 
 class Database {
   constructor() {
@@ -15,11 +15,11 @@ class Database {
   }
 
   init() {
-    // Conexão com o banco de dados
     this.connection = new Sequelize(databaseConfig);
 
-    models.map(model => model.init(this.connection));
-    // .map(model => model.associate && model.associate(this.connection.models));
+    models
+      .map(model => model.init(this.connection))
+      .map(model => model.associate && model.associate(this.connection.models));
   }
 }
 
