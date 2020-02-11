@@ -1,4 +1,4 @@
-import * as yup from 'yup';
+import * as Yup from 'yup';
 
 import Deliveryman from '../models/Deliveryman';
 import File from '../models/File';
@@ -20,13 +20,12 @@ class DeliverymanController {
   }
 
   async store(req, res) {
-    const schema = yup.object().shape({
-      name: yup.string().required(),
-      email: yup
-        .string()
+    const schema = Yup.object().shape({
+      name: Yup.string().required(),
+      email: Yup.string()
         .required()
         .email(),
-      avatar_id: yup.number(),
+      avatar_id: Yup.number(),
     });
 
     if (!(await schema.isValid(req.body))) {
@@ -66,10 +65,10 @@ class DeliverymanController {
   }
 
   async update(req, res) {
-    const schema = yup.object().shape({
-      name: yup.string(),
-      email: yup.string().email(),
-      avatar_id: yup.number(),
+    const schema = Yup.object().shape({
+      name: Yup.string(),
+      email: Yup.string().email(),
+      avatar_id: Yup.number(),
     });
 
     if (!(await schema.isValid(req.body))) {

@@ -75,7 +75,11 @@ class RecipientsController {
   }
 
   async delete(req, res) {
-    return res.json({ ok: true });
+    const { id } = req.params;
+
+    const recipients = await Recipient.destroy({ where: { id } });
+
+    return res.json({ recipients });
   }
 }
 
