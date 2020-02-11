@@ -1,4 +1,5 @@
 import * as Yup from 'yup';
+import { response } from 'express';
 import User from '../models/User';
 
 class UserController {
@@ -34,6 +35,9 @@ class UserController {
   }
 
   async update(req, res) {
+    /** @TODO TiagoBehenck
+     * Separar para um arquivo validators
+     */
     const schema = Yup.object().shape({
       name: Yup.string(),
       email: Yup.string().email(),
@@ -53,16 +57,18 @@ class UserController {
     }
     const { email, oldPassword } = req.body;
 
-    const user = await User.findByPk(req.userId);
+    const user = await User.findByPk(req.params.id);
 
     if (email !== user.email) {
-      const userExists = await User.findOne({
+      await User.findOne({
         where: { email },
-      });
+      })
+        .then(console.log)
+        .catch(err => response.status(400).json(err));
 
-      if (userExists) {
-        return res.status(400).json({ error: 'User alredy exists' });
-      }
+      // if (userExists) {
+      //   return res.status(400).json({ error: 'User alredy exists' });
+      // }
     }
 
     if (oldPassword && !(await user.checkPassword(oldPassword))) {
