@@ -19,20 +19,20 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      complement: {
+      compliment: {
         type: Sequelize.STRING,
         allowNull: false,
       },
       state: {
-        type: Sequelize.STRING,
+        type: Sequelize.CHAR(2),
         allowNull: false,
       },
       city: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      zip_code: {
-        type: Sequelize.INTEGER,
+      postal_code: {
+        type: Sequelize.CHAR(2),
         allowNull: false,
       },
       created_at: {

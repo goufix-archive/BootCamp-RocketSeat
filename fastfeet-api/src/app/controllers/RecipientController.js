@@ -33,7 +33,9 @@ class RecipientsController {
         .required()
         .max(2),
       city: Yup.string().required(),
-      postal_code: Yup.number().required(),
+      postal_code: Yup.string()
+        .length(8)
+        .required(),
     });
 
     if (!(await schema.isValid(req.body))) {

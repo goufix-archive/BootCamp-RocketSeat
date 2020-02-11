@@ -24,11 +24,11 @@ routes.put('/users/:id', UserController.update);
 routes.post('/recipient', RecipientsController.store);
 routes.put('/recipient/:id', RecipientsController.update);
 
-routes.post('/deliverymans', DeliverymansController.store);
-routes.get('/deliverymans', DeliverymansController.index);
-routes.get('/deliverymans/:id', DeliverymansController.show);
-routes.put('/deliverymans/:id', DeliverymansController.update);
-routes.delete('/deliverymans/:id', DeliverymansController.delete);
+routes.post('/deliveryman', DeliverymansController.store);
+routes.get('/deliveryman', DeliverymansController.index);
+routes.get('/deliveryman/:id', DeliverymansController.show);
+routes.put('/deliveryman/:id', DeliverymansController.update);
+routes.delete('/deliveryman/:id', DeliverymansController.delete);
 
 routes.post('/delivery', DeliveryController.store);
 routes.get('/delivery', DeliveryController.index);

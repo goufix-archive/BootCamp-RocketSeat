@@ -2,7 +2,7 @@
 
 // import Order from '../models/Order';
 
-class OrderController {
+class ProblemAdminController {
   async index(req, res) {
     return res.json({ ok: true });
   }
@@ -20,4 +20,4 @@ class OrderController {
   }
 }
 
-export default new OrderController();
+export default new ProblemAdminController();
